@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "[Javascript 책 요약] 2장 HTML 속의 자바스크립트"
+date:   2014-03-28 00:06:43
+categories: javascript
+---
+<blockquote>
+< 프론트엔드 개발자를 위한 자바스크립트>(2013 인사이트, 한선용 옮김) 의 책을 요약한 내용으로 자바스크립트 제대로 배우기 스터디 그룹(페이스북) 의 글입니다.
+</blockquote>
+
+## 1. &lt;script&gt; 요소
+
+ - 속성  
+   	* async : 비동기로 외부 스크립트 파일을 불러옴.  
+   	* defer : 문서의 콘텐츠를 완전히 불러올 때까지 스크립트의 불러오는 것을 미뤘다가 불러온다.  
+	* src : 외부 스크립트 파일의 위치를 지정함.
+	* type : 스크립트 언어의 콘텐츠 타입을 지정함. 
+ - 자바스크립트를 HTML 페이지에 직접 작성하는 것과 외부에 작성된 파일을 불러오는 두가지 방식이 있음.   
+ 
+ {% highlight javascript %}
+ // HTML 파일안에 직접 작성하는 방식
+ <script type="text/javascript">
+ function sayHelloWorld() {
+ 	alert("Hello World!");
+ }
+ </script>
+
+ // 외부파일을 불러오는 방식
+ <script type="text/javascript" src="example.js"></script>
+
+ // 외부 도메인을 가리키는 완전한 URL도 가능함
+ <script type="text/javascript" src="http://www.somewhere.com/example.js"></script>;
+ {% endhighlight %}
+ 
+- 코드를 가져온 방법과 관계없이 <script> 요소는 실행된 순서대로 실행함
+  	* defer와 async 속성이 있을때는 예외이다.
+- 비동기 스크립트
+  	* 두개의 스크립트를 async로 로드할 경우 서로 의존성의 문제가 발생할 수 있다 (순서를 보장하지 못함)
+  	* DOM을 다루는 스크립트는 비동기로 하지 않는 것이 좋다.
+- 태그위치
+  	* <head> 요소 안에 쓰는 것이 전통적인 방식.
+  	* 전통방식은 자바스크립트의 로딩이 길어질 경우 로딩동안 브라우저에 아무것도 보이지 않는 현상이 생김.
+  	* 그래서 <body&gt;의 맨 마지막에 위치시킴.
+- 인라인 코드보다 외부 파일로 분리하는 것을 추천함.
+  	* 외부파일을 캐싱하므로 다른페이지에서 로딩하는 시간을 단축시킬 수 있고
+  	* XHTML의 규칙에 영향을 받지 않아 편법을 쓰지 않아도 된다는 것과 관리가 쉬워진다는 이점이 생긴다.
+  
+## 2. 문서모드
+
+- 익스플로러 5.5에서 문서모드라는 개념을 도입함.
+- 문서 모드로 쿽스모드와 표준모드, 거의 표준모드가 존재함.
+  	* 쿽스모드는 익스플로러5 인 것처럼 행동하고 여러 비표준기능을 사용함.
+  	* 쿽스모드에서는 브라우저의 일관성을 전혀기대할 수 없음.
+  	* 표준모드는 표준에 가까운 방식으로 동작함.
+  	* 거의표준모드는 표준만큼 엄격한 규칙을 갖지 않고 이미지 주변 공백처리의 차이가 있음.
+  	* 문서의 시작에 독타입을 쓰지 않으면 쿽스모드를 사용함.
+- 표준모드를 사용할 수 있는 독타입
+
+ {% highlight html %}
+ <!-- HTML 4.01 Strict -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!-- XHTML 1.0 Strict -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- HTML5 -->
+<!DOCTYPE html>
+ {% endhighlight %}
+  
+## 3. &lt;noscript&gt; 요소
+- 브라우저가 자바스크립트를 지원하지 않을 때 또는 스크립트 지원이 꺼져 있을 때 콘텐츠를 제공하기 위해 사용할 수 있다.
