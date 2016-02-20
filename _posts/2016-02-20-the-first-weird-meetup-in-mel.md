@@ -51,4 +51,8 @@ categories: weirdmeetup
 
 <div><iframe width="560" height="315" src="https://www.youtube.com/embed/_QcU1-YpkFQ" frameborder="0" allowfullscreen style="display:block;margin:0 auto;"></iframe></div>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jkd-8_jMpcY" frameborder="0" allowfullscreen  style="display:block;margin:0 auto;"></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xFgnCPBludc" frameborder="0" allowfullscreen  style="display:block;margin:0 auto;"></iframe>
+
 
