@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Git] SourceTree 에서 upstream 추가하기"
-date:   2015-12-09 22:38:00
+date:   2016-02-19 22:38:00
 categories: git, sourcetree, tips
 ---
 
