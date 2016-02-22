@@ -5,7 +5,7 @@ highlighter: rouge
 lsi: false
 future: true
 
-permalink: pretty
+# permalink: pretty
 # /blog/:year/:month/:day/:title/
 
 # Where things are
@@ -38,3 +38,5 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 page.comments: True
 twitter_username: earlpod
 github_username:  ul7290
+
+permalink: /:year-:month-:day-:title/
