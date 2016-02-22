@@ -31,3 +31,6 @@ twitter_username: earlpod
 github_username:  ul7290
 
 permalink: /:year-:month-:day-:title/
+
+future: true
+relative_permalinks: true
