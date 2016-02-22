@@ -30,4 +30,4 @@ page.comments: True
 twitter_username: earlpod
 github_username:  ul7290
 
-permalink: /:title/
+permalink: /:year-:month-:day-:title/
