@@ -1,0 +1,270 @@
+<DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>[iOS] 코드로 Autolayout 적용하기 (Swift로 하는 autolayout) - 2</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="canonical" href="/posts/2014-09-24-ios-autolayout-with-swift-2/">
+</head>
+
+  
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">blog.eeearl.com</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <!--  -->
+          <!--  -->
+          <!-- <a class="page-link" href="/404/">404 - Page not found</a> -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+          <!-- <a class="page-link" href="/about/">About</a> -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+          <!-- <a class="page-link" href="/works/">Works</a> -->
+          <!--  -->
+        <!--  -->
+          <!--  -->
+          <!-- <a class="page-link" href="/works/">Works</a> -->
+          <!--  -->
+        <!--  -->
+        <a class="page-link" href="/about/">Abouts</a>
+        <a class="page-link" href="/works/">Works</a>
+        <!-- <a class="page-link" href="/tags">Tags</a> -->
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">[iOS] 코드로 Autolayout 적용하기 (Swift로 하는 autolayout) - 2</h1>
+    <p class="post-meta">Sep 24, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <h1 id="autolayout--swift--autolayout---2">코드로 Autolayout 적용하기 (Swift로 하는 autolayout) - 2</h1>
+
+<p>Swift로 <a href="/ios-autolayout-with-swift-1">Autolayout 적용하기 (코드로 하는 autolayout) - 1</a> 에서는 간단한 뷰 배치에 대해서 해보았다. 이번엔 두개 이상의 뷰에 관계를 엮어 적용해본다.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="c1">// 파란뷰 생성</span>
+<span class="k">var</span> <span class="nv">blueView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+<span class="n">blueView</span><span class="o">.</span><span class="nf">setTranslatesAutoresizingMaskIntoConstraints</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="n">blueView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1">// 빨간뷰 생성</span>
+<span class="k">var</span> <span class="nv">redView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+<span class="n">redView</span><span class="o">.</span><span class="nf">setTranslatesAutoresizingMaskIntoConstraints</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="n">redView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.07</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1">// 1. 뷰에 추가</span>
+<span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">blueView</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">redView</span><span class="p">)</span>
+
+<span class="c1">// 2. 뷰 딕셔너리 생성</span>
+<span class="k">let</span> <span class="nv">viewsDictionary</span> <span class="o">=</span> <span class="p">[</span><span class="s">"blueView"</span><span class="p">:</span><span class="n">blueView</span><span class="p">,</span> <span class="s">"redView"</span><span class="p">:</span><span class="n">redView</span><span class="p">]</span>
+
+<span class="c1">// 파란뷰의 크기 설정</span>
+<span class="k">let</span> <span class="nv">blueConstaintV</span> <span class="o">=</span> <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">constraintsWithVisualFormat</span><span class="p">(</span><span class="s">"V:[blueView(100)]"</span><span class="p">,</span>
+    <span class="nv">options</span><span class="p">:</span> <span class="kt">NSLayoutFormatOptions</span><span class="o">.</span><span class="n">allZeros</span><span class="p">,</span>
+    <span class="nv">metrics</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">views</span><span class="p">:</span> <span class="n">viewsDictionary</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">blueConstaintH</span> <span class="o">=</span> <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">constraintsWithVisualFormat</span><span class="p">(</span><span class="s">"H:[blueView(100)]"</span><span class="p">,</span>
+    <span class="nv">options</span><span class="p">:</span> <span class="kt">NSLayoutFormatOptions</span><span class="o">.</span><span class="n">allZeros</span><span class="p">,</span>
+    <span class="nv">metrics</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">views</span><span class="p">:</span> <span class="n">viewsDictionary</span><span class="p">)</span>
+
+<span class="c1">// 빨간뷰의 크기 설정</span>
+<span class="k">let</span> <span class="nv">redConstaintV</span> <span class="o">=</span> <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">constraintsWithVisualFormat</span><span class="p">(</span><span class="s">"V:[redView(200)]"</span><span class="p">,</span>
+    <span class="nv">options</span><span class="p">:</span> <span class="kt">NSLayoutFormatOptions</span><span class="o">.</span><span class="n">allZeros</span><span class="p">,</span>
+    <span class="nv">metrics</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">views</span><span class="p">:</span> <span class="n">viewsDictionary</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">redConstaintH</span> <span class="o">=</span> <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">constraintsWithVisualFormat</span><span class="p">(</span><span class="s">"H:[redView(100)]"</span><span class="p">,</span>
+    <span class="nv">options</span><span class="p">:</span> <span class="kt">NSLayoutFormatOptions</span><span class="o">.</span><span class="n">allZeros</span><span class="p">,</span>
+    <span class="nv">metrics</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">views</span><span class="p">:</span> <span class="n">viewsDictionary</span><span class="p">)</span>
+
+<span class="c1">// 3. 뷰 정렬(가로)을 정의</span>
+<span class="k">let</span> <span class="nv">constraintPosH</span> <span class="o">=</span> <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">constraintsWithVisualFormat</span><span class="p">(</span><span class="s">"H:|-30-[blueView]-10-[redView]"</span><span class="p">,</span>
+    <span class="nv">options</span><span class="p">:</span> <span class="kt">NSLayoutFormatOptions</span><span class="o">.</span><span class="n">allZeros</span><span class="p">,</span>
+    <span class="nv">metrics</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">views</span><span class="p">:</span> <span class="n">viewsDictionary</span><span class="p">)</span>
+<span class="c1">// 뷰 정렬(세로)을 정의</span>
+<span class="k">let</span> <span class="nv">constraintPosV</span> <span class="o">=</span> <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">constraintsWithVisualFormat</span><span class="p">(</span><span class="s">"V:|-130-[blueView]-20-[redView]"</span><span class="p">,</span>
+    <span class="nv">options</span><span class="p">:</span> <span class="kt">NSLayoutFormatOptions</span><span class="o">.</span><span class="n">allZeros</span><span class="p">,</span>
+    <span class="nv">metrics</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">views</span><span class="p">:</span> <span class="n">viewsDictionary</span><span class="p">)</span>
+
+<span class="n">blueView</span><span class="o">.</span><span class="nf">addConstraints</span><span class="p">(</span><span class="n">blueConstaintV</span><span class="p">)</span>
+<span class="n">blueView</span><span class="o">.</span><span class="nf">addConstraints</span><span class="p">(</span><span class="n">blueConstaintH</span><span class="p">)</span>
+<span class="n">redView</span><span class="o">.</span><span class="nf">addConstraints</span><span class="p">(</span><span class="n">redConstaintV</span><span class="p">)</span>
+<span class="n">redView</span><span class="o">.</span><span class="nf">addConstraints</span><span class="p">(</span><span class="n">redConstaintH</span><span class="p">)</span>
+
+<span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addConstraints</span><span class="p">(</span><span class="n">constraintPosV</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addConstraints</span><span class="p">(</span><span class="n">constraintPosH</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>가로세로 100x100의 파란색 뷰와 가로세로 30x30의 붉은색 뷰를 배치하고 Vertical과 Horizontal 의 여백과 간격을 주었다.</p>
+
+<p><img src="/assets/ios-autolayout-with-swift-2.png" alt="ios-autolayout-with-swift-2" /></p>
+
+<p><strong>1.두개의 뷰의 <code class="highlighter-rouge">addSubView</code>를 할때 레이어가 밑에서 부터 위로 쌓이는 순서가 된다.</strong></p>
+
+<p><strong>2. 뷰 딕셔너리를 생성하는데 용도는 아래에 있는 Visual Format에서 쓰일 값(뷰오브젝트 또는 수치)를 키값으로 쓰이기 위해 정의한다.</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>**3. 뷰의 정렬하는 규칙을 정의한다. 가로를 정의할 땐 ‘H’, 세로를 정의할 땐 ‘V’로 시작한다. 가로 100, 세로 200의 길이를 정의한다면 가로는 <code class="highlighter-rouge">H:[view(100)]</code>, 세로는 <code class="highlighter-rouge">V:[view(200)]</code> ‘</td>
+      <td>‘는 뷰의 끝을 의미한다. 예를 들어 <code class="highlighter-rouge">H:|-30-[view]</code> 는 왼쪽 끝에서 30 의 여백을 두고 view를 위치하겠다는 의미이다. 여기선 왼쪽 끝을 기준으로 여백을 주었고 두개의 뷰 사이에 간격을 주었다.**</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>포지션을 설정할 때 <code class="highlighter-rouge">options</code>는 특별한 기준을 두지 않는다면 <code class="highlighter-rouge">NSLayoutFormatOptions.allZeros</code>로 한다. <code class="highlighter-rouge">NSLayoutFormatOptions</code> 에는 왼쪽기준 오른쪽기준 중앙정렬 등 여러가지 옵션을 줄 수 있다.</li>
+  <li><code class="highlighter-rouge">H:|-30-[blueView]-10-[redView]</code> 은 Horizontal을 기준으로 super view의 왼쪽에서 여백 30 + blueView + 여백 10 + redView 를 배치한 것이다.</li>
+  <li><code class="highlighter-rouge">V:|-30-[blueView]-20-[redView]</code> 은 Vertical을 기준으로 super view의 위에서 여백 30 + blueView + 여백 20 + redView 를 배치했다.</li>
+</ul>
+
+
+    <ul class="tags post-tags cf">
+	    
+  	</ul>
+  
+  </article>
+  
+  
+  
+<!-- Add Disqus comments. -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'ul7290githubio'; // required: replace example with your forum shortname
+  var disqus_identifier = "/posts/2014-09-24-ios-autolayout-with-swift-2/";
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>blog.eeearl.com</li>
+          <li>ul7290@gmail.com</li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/ul7290">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">ul7290</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/earlpod">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">earlpod</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+          <p class="rss-subscribe"><a href="/feed.xml">RSS Feed</a></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    <script defer src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- tag, category search -->
+    <script defer src="/js/alexpearce.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63993792-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+
+</html>
