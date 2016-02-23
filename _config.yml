@@ -10,7 +10,7 @@ future: true
 
 # Where things are
 source:      .
-destination: ./_site
+destination: ./posts
 plugins_dir:  ./_plugins
 layouts_dir:  ./_layouts
 data_dir: 		./_data
