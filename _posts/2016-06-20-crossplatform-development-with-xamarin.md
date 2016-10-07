@@ -27,3 +27,4 @@ IDE는 맥과 윈도우에서 개발하는 환경을 모두 제공하지만 개�
 아래는 이상한모임에서 발표한 슬라이드이다.
 
 <div style="text-align: center;"><iframe src="//www.slideshare.net/slideshow/embed_code/key/zA4yvFmp840Lqw" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/HanulPark3/weirdmeetup-xamarinpresentation" title="Weirdmeetup xamarin-presentation" target="_blank">Weirdmeetup xamarin-presentation</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/HanulPark3">Hanul Park</a></strong> </div><div>
+

@@ -11,8 +11,8 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: "Roboto", "Open Sans", sans-serif;
+  font-size: 18px;
   line-height: 2;
   font-weight: 300;
   color: #111;
@@ -42,7 +42,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 14px; }
+  font-size: 15.75px; }
 
 /**
  * Lists
@@ -110,6 +110,20 @@ pre {
  * Wrapper
  */
 .wrapper {
+  max-width: -webkit-calc(640px - (30px * 2));
+  max-width: calc(640px - (30px * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px; }
+  @media screen and (max-width: 800px) {
+    .wrapper {
+      max-width: -webkit-calc(640px - (30px));
+      max-width: calc(640px - (30px));
+      padding-right: 15px;
+      padding-left: 15px; } }
+
+.wrapper-work {
   max-width: -webkit-calc(800px - (30px * 2));
   max-width: calc(800px - (30px * 2));
   margin-right: auto;
@@ -117,7 +131,7 @@ pre {
   padding-right: 30px;
   padding-left: 30px; }
   @media screen and (max-width: 800px) {
-    .wrapper {
+    .wrapper-work {
       max-width: -webkit-calc(800px - (30px));
       max-width: calc(800px - (30px));
       padding-right: 15px;
@@ -126,7 +140,7 @@ pre {
 /**
  * Clearfix
  */
-.wrapper:after, .footer-col-wrapper:after {
+.wrapper:after, .wrapper-work:after, .footer-col-wrapper:after {
   content: "";
   display: table;
   clear: both; }
@@ -220,7 +234,7 @@ pre {
   text-align: right; }
 
 .footer-col-wrapper {
-  font-size: 13px;
+  font-size: 15px;
   color: #828282;
   margin-left: -15px; }
 
@@ -273,8 +287,9 @@ pre {
     /*$spacing-unit;*/ }
 
 .post-meta {
-  font-size: 14px;
-  color: #828282; }
+  font-size: 15.75px;
+  color: #828282;
+  float: right; }
 
 .post-link {
   /*
@@ -287,6 +302,10 @@ pre {
  */
 .post-header {
   margin-bottom: 30px; }
+  .post-header .post-meta {
+    font-size: 15.75px;
+    color: #828282;
+    float: none; }
 
 .post-title {
   font-size: 42px;

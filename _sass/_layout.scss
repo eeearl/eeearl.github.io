@@ -186,6 +186,7 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+    float: right;
 }
 
 .post-link {
@@ -201,6 +202,11 @@
  * Posts
  */
 .post-header {
+    .post-meta {
+        font-size: $small-font-size;
+        color: $grey-color;
+        float: none;
+    }
     margin-bottom: $spacing-unit;
 }
 

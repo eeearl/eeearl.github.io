@@ -11,7 +11,7 @@ ul, menu, dir {
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
-  -webkit-padding-start: 40px;
+  -webkit-padding-start: 0px;
 }
 
 /*Tag from https://alexpearce.me*/
@@ -108,6 +108,22 @@ ul, menu, dir {
 .projects-wrapper .project-item .project-feature-img {
   width: 350px;
 }
+
+.header-content {
+  height: 120px;
+  border-bottom: 1px solid #eee;
+}
+
+.one-pixel-top-line {
+  /*border-top: 1px solid #eee;*/
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.get-in-touch {
+  list-style: none;
+}
+
 
 @media screen and (max-width: 768px) {
     .project-item {
