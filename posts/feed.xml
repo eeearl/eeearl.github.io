@@ -6,9 +6,64 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 08 Oct 2016 00:01:35 +1100</pubDate>
-    <lastBuildDate>Sat, 08 Oct 2016 00:01:35 +1100</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <pubDate>Sun, 13 Nov 2016 23:25:47 +1100</pubDate>
+    <lastBuildDate>Sun, 13 Nov 2016 23:25:47 +1100</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>너무너무너무 고민되는 클래스이름 짓기</title>
+        <description>&lt;p&gt;개발자라면 누구나 개발중 고민되는 것으로 이름짓기지 않나 싶다 특히 &lt;strong&gt;클래스이름짓기&lt;/strong&gt;
+변수같은 경우도 마찬가지긴 하지만 클래스이름에 상당히 고민을 많이 한다.&lt;/p&gt;
+
+&lt;p&gt;특히 자주쓰는 데이터베이스나 데이터를 관리하는 클래스 이름에 대해선 먼가 더 깔끔하고 좋은 이름이 없는지 
+항상 고민하게 되는데 이런건 구글도 도와줄수 없는것이기 때문에 더욱더 힘들다.&lt;/p&gt;
+
+&lt;p&gt;나의 경우 첫직장에서 일하던 클래스를 보면 클래스들의 이름을
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Utils&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Helper&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Manager&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Wrapper&lt;/code&gt; 로 많이 작성했다.
+지금도 &lt;code class=&quot;highlighter-rouge&quot;&gt;er&lt;/code&gt; 를 붙여서 클래스를 작명하는 건 많이 쓰긴 하지만 
+그때그때 조금더 명확한 명칭을 붙이고 싶어서 더 고민하게 된다.&lt;/p&gt;
+
+&lt;p&gt;특히 &lt;code class=&quot;highlighter-rouge&quot;&gt;Manager&lt;/code&gt;라는 것을 꽤 많이 사용하게 되는데 항상 고민끝에 저 이름을 붙이게 된다. 
+뭔가를 특정 부분의 데이터들을 처리하는 클래스를 &lt;em&gt;관리&lt;/em&gt;한다는 뜻으로 사용하는게 의미상 맞는지 항상
+고민을 하게되는데 최근에 검색을 하면서 꽤 오래된 포스트를 찾았는데 &lt;a href=&quot;http://www.bright-green.com/blog/2003_02_25/naming_java_classes_without_a.html&quot;&gt;Naming Java classes without a ‘Manager’&lt;/a&gt;를 읽으면서 작명을 할때 의미에 대해서 다시생각하게 되었다.&lt;/p&gt;
+
+&lt;p&gt;검색을 해보면 영어권의 사람들도 작명에 대해 상당히 고민을 많이 한다는 것을 볼수있다.&lt;/p&gt;
+
+&lt;p&gt;작명에 대한 질문에 대한 답변들을 보면 각자의 스타일이 있어서 주로쓰는 단어가 서로 다르고 
+디자인패턴에서도 이름을 인용해 쓴다.&lt;/p&gt;
+
+&lt;p&gt;그리고 찾을 수 있는 조금의 팁은&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전혀 새로운 단어의 사용은 자제한다.&lt;/li&gt;
+  &lt;li&gt;프레임워크에서 어떤 단어들을 사용하는지 찾아본다.&lt;/li&gt;
+  &lt;li&gt;디자인 패턴에서 해당 패턴의 이름을 인용한다.&lt;/li&gt;
+  &lt;li&gt;작명은 굉장히 중요하긴 하지만 너무많은 시간을 작명에 쓰지는 말것.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그중에 &lt;a href=&quot;http://source-code-wordle.de/&quot;&gt;Words used in Source Code&lt;/a&gt; 라는 사이트에서
+닷넷프레임외에 몇가지 프레임워크에서 사용하는 명칭들을 사용수에 따라 시각화해서 보여주고있다.&lt;/p&gt;
+
+&lt;p&gt;결론은 결국 작명에 대한 답은 없지만 계속해서 다른 프레임워크들은 어떻게 작명하는지 계속해서 보고
+클래스의 역할에 대해 꾸준히 생각해야 하는 문제인것 같다.&lt;/p&gt;
+
+&lt;p&gt;아래는 작명에 대한 글들과 StackOverflow 질문들이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1866794/naming-classes-how-to-avoid-calling-everything-a-whatevermanager&quot;&gt;Naming Classes - How to avoid calling everything a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;WhatEver&amp;gt;Manager&lt;/code&gt;?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1194403/what-names-do-you-find-yourself-prepending-appending-to-classes-regularly&quot;&gt;What names do you find yourself prepending/appending to classes regularly?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.c2.com/?DontNameClassesObjectManagerHandlerOrData&quot;&gt;Dont Name Classes Object Manager Handler Or Data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bright-green.com/blog/2003_02_25/naming_java_classes_without_a.html&quot;&gt;Naming Java classes without a ‘Manager’&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 13 Nov 2016 23:38:00 +1100</pubDate>
+        <link>/2016-11-13-naming-for-class/</link>
+        <guid isPermaLink="true">/2016-11-13-naming-for-class/</guid>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>Xamarin 으로 크로스플랫폼 개발</title>
@@ -433,43 +488,6 @@
         <pubDate>Wed, 09 Sep 2015 10:00:00 +1000</pubDate>
         <link>/2015-09-09-australia-01/</link>
         <guid isPermaLink="true">/2015-09-09-australia-01/</guid>
-        
-        
-        <category>australia,</category>
-        
-        <category>workholiday,</category>
-        
-        <category>워킹홀리데이,</category>
-        
-        <category>호주</category>
-        
-      </item>
-    
-      <item>
-        <title>미국에서 부터 호주, 그다음 뉴질랜드로 계획을 세운이유</title>
-        <description>&lt;p&gt;미국에 2달간 체류하면서 여행겸 내가 살수있는 조건이나 방법들을 알아보기 위해 나름 귀동냥을 하며 아는사람 모르는사람 이상한사람(?) 들에게 물어물어 알게된 내용들과 내 현실을 맞춰가며 혹은 가능성을 고려해서 생각을 약 3개월 정도 했었던것 같다. 생활비가 필요했기 때문에 몰두하면서 생각한 시간은 많지 않지만 그래도 관심은 항상 있었기 때문에 틈틈히 예상하는 시나리오와 가능성을 생각하면서 예산은 얼마정도, 그렇게 내가 얼마나 생활하고 취업과 영어와 비자와.. 모든 조건들을 언제쯤 만족할 수 있는지 최고와 최악의 상황들을 생각하면서 지내왔지만 점점 현실에 안주하고 관심은 있지만 더이상 내것이 안될것 같다는 느낌, 다시 일상으로 돌아가서 해외로 가는건 여행으로만 생각하게 될때쯤 이었다.&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;# 가능성&lt;/h1&gt;
-
-&lt;p&gt;친구가 우연하게 듣게된 유학상담으로 가능성을 나에게 알려줬었다. 그건 미국이 아닌 다른나라로 가는것. 그것도 고려하지 않았던것은 아니지만 미국이라는 나라에 욕심이 너무 컸기 때문에 다른나라를 생각하지 않았었다. 어쩔수없이 미국진출에 실패하면 가려고 했었었지만 한국생활을 하면서 점점 잊고 있었다. 다시 현실에 만족은 아니지만 그럭저럭한 삶에 맞춰지고 있었기에 목표도 잃었던 시기였는데 다시한번 도전을 할수있게 만들었다. 내가 해외로 가려고 하는 이유는 더 나은 삶이 었는데 그걸 잊고있다니.. 그래서 미국은 과감히 포기라기 보단 뒷순위로 보냈다.&lt;/p&gt;
-
-&lt;p&gt;솔직히 미국에 다녀오고 나서 느낀점은 굉장히 도박과 같은 느낌이었다. 나같은 경우엔 모아둔 돈도 없어서 미국에 가게되도 어떻게든 버티는 삶을 살수밖에 없었기 때문에 전공, 직업에 상관없이 어떤일이든 해야했고 일하는것도 일반적인 학생신분으로 일하는 것은 안되게 때문에 불법적으로 하는 일만 가능했다. 그런데 호주와 뉴질랜드를 놓고 보면 일단 학생신분으로도 일을 합법적으로 할 수 있다. 가장 큰 생활비 문제가 해결되었다.&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;# 확신&lt;/h1&gt;
-
-&lt;p&gt;그 이후 유학원에 몇번 상담을 받으러 가거나 상담회, 박람회 등을 다녔다. 정보를 얻는 가장 좋은 수단이라고 생각되었고 내가 생각했던 가능성이 맞는것인지도 확인하고 싶었기 때문이다. 그리고 예상하지 못했었던 좋은 정보들을 얻게되었다. 이건 내 개인적인 판단이긴 하지만 유학원을 통하면 정석코스(?)를 통해 해당하는 나라의 학위를 얻거나 학교에서 제공하는 인턴코스를 통해 현지 회사에서 일을 할수 있는 기회를 얻을 수 있다. 심지어 돈이 있는사람과 없는 사람을 위한 코스도 있었다. 그리고 상담은 돈이 들지 않기 때문에 부담없이 가서 들을 수 있었고 3, 4개정도 유학원을 다녀보니 어느정도 감이 잡혔다.&lt;/p&gt;
-
-&lt;p&gt;유학원을 통하면 정말 고민없이 짜여진 계획대로 가면되지만 나는 왠지 혼자할 수 있을것 같은 느낌이 들어서 유학원의 도움없이 해보기로 했다. 나는 호주를 워킹홀리데이 비자로 해서 간 다음 학비를 벌어 뉴질랜드로 가는것이 첫번째 목표였다. 호주는 임금이 상당히 비싸서 유흥이나 도박에 빠지는 일이 없다면 성실하게 일을 해서 돈을 꽤 모을수 있는 곳이다. 하지만 한국나이로 만 30세까지 나이제한이 있는것만 제외하면 상당히 좋은 방법이다. 그리고 조금 욕심을 부려 기대를 한다면 영어권에서 영어를 쓰면서 배우면서 일을 할수 있다는 것이다.&lt;/p&gt;
-
-&lt;h1 id=&quot;section-2&quot;&gt;# 희망&lt;/h1&gt;
-
-&lt;p&gt;이제 정당하게 돈을 벌수 있는걸 알았으니 가기만 하면 된다는 생각이 들었다. 상담을 받으면서 느낀건 전문직이면 유학원에서도 굉장히 좋게 이야기 해준다. 그만큼 해외에서 정착이나 생활을 길게 보고 있다면 직업이 혜택을 더 줄수 있기 때문이다. 호주나 뉴질랜드에서 전문직 (특히 기계를 다루는) 인원을 많이 필요로 한다는 이야기일 수도 있다. 나는 충분히 해당된다는 이야기에 더욱 희망이 보였고 뉴질랜드에서 영주권을 받는 것까지 생각한다면 혜택은 더욱 많아진다. 영주권자에게도 혜택이 많은 나라가 뉴질랜드였다. 거기에 자연환경이 매우 좋아서 사람이 살아가기에 굉장히 좋은곳이었다.&lt;/p&gt;
-
-&lt;p&gt;이제 계획과 준비를 하고 실행에 옮기기만 하면 될것이라는 생각이 들었다.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 08 Sep 2015 10:00:00 +1000</pubDate>
-        <link>/2015-09-08-australia-00/</link>
-        <guid isPermaLink="true">/2015-09-08-australia-00/</guid>
         
         
         <category>australia,</category>
