@@ -7,3 +7,6 @@ This is my blog. It's a static site on Github using [Jekyll](https://jekyllrb.co
 ```
 > jekyll serve
 ```
+```
+> bundle exec jekyll serve
+```
