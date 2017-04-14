@@ -1,3 +1,6 @@
+// https://fonts.google.com/earlyaccess#Noto+Sans+KR
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 /**
  * Reset some basic elements
  */
@@ -17,7 +20,7 @@ body {
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    font-weight: 300;
+    /* font-weight: 300; */
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
@@ -89,16 +92,17 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
+    color: $link-text-text;
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        /* color: darken($brand-color, 15%); */
+        color: #888;
     }
 
     &:hover {
-        color: $text-color;
-        text-decoration: underline;
+        color: $link-hover;
+        /* text-decoration: underline; */
     }
 }
 
@@ -130,7 +134,7 @@ code {
     font-size: 15px;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: #d2d2da;
 }
 
 code {

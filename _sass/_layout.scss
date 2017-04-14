@@ -187,6 +187,7 @@
     font-size: $small-font-size;
     color: $grey-color;
     float: right;
+    font-size: 0.8em;
 }
 
 .post-link {
@@ -194,8 +195,16 @@
     display: block;
     font-size: 24px;
 */
+    font-size: 0.88em;
+    font-weight: 400;
 }
 
+.post-desc {
+    margin: 0 0 10px 14px;
+    font-size: 0.76em;
+    color: #999;
+    font-weight: 300;
+}
 
 
 /**

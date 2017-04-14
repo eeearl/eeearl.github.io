@@ -3,6 +3,7 @@ layout: post
 title:  "Digital Ocean에 Cloud Flare로 https 쉽게 설정하기"
 date:   2017-04-04 09:41:00
 categories: web, https, digitalocean
+description: "Digital Ocean 서버에 https를 간단히 적용했던 방법을 이야기합니다."
 ---
 
 최근 프로젝트에서 간단한 서버사이드와 통신을 하는 부분이 있었는데 애플쪽에서 통신관련된 부분에서 스펙을 https로 요구하고 있어서 고민하고 있던도중 @haruair 님의 조언으로 가장 간단한 방법은 [Cloud Flare](https://www.cloudflare.com/)로 연결해주는 방법이라고 알려주셔서 적용해보았다.

@@ -4,21 +4,77 @@
     <title>blog.eeearl.com</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Jan 2017 17:40:54 +1100</pubDate>
-    <lastBuildDate>Sun, 01 Jan 2017 17:40:54 +1100</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 14 Apr 2017 13:27:48 +1000</pubDate>
+    <lastBuildDate>Fri, 14 Apr 2017 13:27:48 +1000</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Digital Ocean에 Cloud Flare로 https 쉽게 설정하기</title>
+        <description>&lt;p&gt;최근 프로젝트에서 간단한 서버사이드와 통신을 하는 부분이 있었는데 애플쪽에서 통신관련된 부분에서 스펙을 https로 요구하고 있어서 고민하고 있던도중 @haruair 님의 조언으로 가장 간단한 방법은 &lt;a href=&quot;https://www.cloudflare.com/&quot;&gt;Cloud Flare&lt;/a&gt;로 연결해주는 방법이라고 알려주셔서 적용해보았다.&lt;/p&gt;
+
+&lt;p&gt;엄청 간단하게 다른 추가작업이 필요없이 &lt;code class=&quot;highlighter-rouge&quot;&gt;https&lt;/code&gt;를 적용할수 있고 단지 &lt;code class=&quot;highlighter-rouge&quot;&gt;https&lt;/code&gt;만 필요한 것이라면 무료로 이용이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;내가 작업했던 환경은&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/&quot;&gt;Digital Ocean&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Node.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;정도였다.&lt;/p&gt;
+
+&lt;p&gt;절차를 간략하게 설명하면&lt;/p&gt;
+
+&lt;h4 id=&quot;cloud-flare-에서&quot;&gt;&lt;em&gt;Cloud Flare 에서&lt;/em&gt;&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cloudflare.com/&quot;&gt;Cloud Flare&lt;/a&gt;에 가입하고 &lt;code class=&quot;highlighter-rouge&quot;&gt;https&lt;/code&gt;를 적용할 도메인을 입력 하면&lt;/li&gt;
+  &lt;li&gt;알아서 도메인의 네임서버를 분석해서 어떤 값으로 교체하라는 화면이 친절하게 나온다.&lt;/li&gt;
+  &lt;li&gt;도메인을 사용하는 서비스로 가서 네임서버를 바꿔준다.&lt;/li&gt;
+  &lt;li&gt;메뉴에 DNS를 들어가 &lt;code class=&quot;highlighter-rouge&quot;&gt;DNS Records&lt;/code&gt; 에서 아래와 같이 입력해준다. {} 안은 해당하는 값으로 넣어준다.
+    &lt;ul&gt;
+      &lt;li&gt;A    {#DOMAIN_NAME#}    {#SERVER_IP_ADDRESS#}&lt;/li&gt;
+      &lt;li&gt;CNAME www    {#DOMAIN_NAME#}&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;메뉴에  Crypto를 들어가 SSL을 &lt;code class=&quot;highlighter-rouge&quot;&gt;Flexible&lt;/code&gt; 로 바꿔준다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;server-에서&quot;&gt;&lt;em&gt;Server 에서&lt;/em&gt;&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Node.js 서버를 80포트로 서비스해준다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이제 약 1~2시간 정도 기다려주면 https로 접속해볼수 있다.&lt;/p&gt;
+
+&lt;p&gt;일반적인 https를 적용하는 것이라면 SSL인증서를 받아서 서버안에서 많은 작업들을 해줘야 하는데 
+Cloud Flare는 이 절차들을 엄청나게 간소화 시켜주었다. 네임서버만 변경해서 도메인과 서버의 중간에서 Cloud Flare의 SSL을 통해 https의 혜택을 받는것이다.&lt;/p&gt;
+
+&lt;p&gt;이제 다른사람이 간단히 https를 이용할 것을 찾는다면 Cloud Flare를 추천한다.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Apr 2017 19:41:00 +1000</pubDate>
+        <link>http://localhost:4000/2017-04-04-https-cloudflare/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017-04-04-https-cloudflare/</guid>
+        
+        
+        <category>web,</category>
+        
+        <category>https,</category>
+        
+        <category>digitalocean</category>
+        
+      </item>
     
       <item>
         <title>2016년 회고록</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;2016년 회고록&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;2016년-회고록&quot;&gt;2016년 회고록&lt;/h1&gt;
 
 &lt;p&gt;벌써 2016년 한해를 호주에서 보냈다. 
 2015년 12월 31일, 작년 그때를 생각해보면 한마디씩 친구들 앞에서 말 한마디도 영어로 말을 못했었는데 지금은 친구들이 나에게 예전보다 영어를 더 편하게 듣고 말한다는 이야기를 들을 때마다 올해는 어떤 한 해를 보냈었는지 많은 생각이 든다.
 현재는 호주인 회사에서 일을 하고 있다. 기대했던 것보단 부족한 게 많았지만, 지난 일들을 회상하며 더 나은 2017년을 위해 회고록을 작성해본다.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;워킹홀리데이&lt;/h2&gt;
+&lt;h2 id=&quot;워킹홀리데이&quot;&gt;워킹홀리데이&lt;/h2&gt;
 
 &lt;p&gt;2016년 9월에 워킹홀리데이 비자가 만료되었는데 되돌아보면 많은 도전이 있었고 1년밖에 안 되는 시간이지만 많은 것을 느꼈고 배웠다고 생각한다.&lt;/p&gt;
 
@@ -30,33 +86,33 @@
 
 &lt;p&gt;워킹홀리데이를 통해서 호주에 적응을 잘 할 수 있었다고 생각한다. 서양문화를 배울 수 있는 기회였고 다른 어떤 나라에 가도 잘 지낼 수 있다는 자신감도 생겼다. 내가 영어를 원래 잘하고 적응력이 좋았던 것이 아니라 도전을 하면서 기회들을 접할 수 있게 되었고 그렇게 생활하며 지금 여기까지 왔다고 생각한다. 아쉬운 게 많은 시간이었지만 후회는 하지 않는다.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;회사&lt;/h2&gt;
+&lt;h2 id=&quot;회사&quot;&gt;회사&lt;/h2&gt;
 
 &lt;p&gt;워킹홀리데이의 마지막 즈음에 연락이 온 회사, 사실 인터뷰는 굉장히 예전에 봤었는데 잊고 있을 때 즈음 연락이 다시 왔다. 아직도 우리 아이템에 관심이 있냐고, 다시 인터뷰를 보는 줄 알았는데 자기들이 가지고 있는 아이디어를 굉장히 자세히 기술한 문서를 보여주었다. 내가 그 프로젝트를 하겠다고 결심하고 나서도 이후에 몇 번의 확인을 하는 미팅을 했었다.&lt;/p&gt;
 
 &lt;p&gt;영어도 이 정도면 나쁘지 않다고 했고 실력을 조금 의심하는 눈치였지만 1달 정도 빠르게 프로토타입을 만들어 윤곽을 잡아서 보여주니 다행히 만족하는 것 같다. 큰 회사는 아니지만, 호주인과 같이 일하고 있고 일하면서 느끼는 건 한국과는 확실히 대우가 다르다. 일이 먼저가 아니라 사람이 먼저라는 느낌이다. 예를 들어 내가 일정을 무리하게 잡으면 건강을 먼저 챙기라는 말부터 해주고, 야근하려고 하면 좀 쉬고 하라면서 집에 보내준다. 아직 4개월밖에 일하지 못했지만, 앞으로 일하는 게 기대된다.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;프로그래밍 스터디&lt;/h2&gt;
+&lt;h2 id=&quot;프로그래밍-스터디&quot;&gt;프로그래밍 스터디&lt;/h2&gt;
 
 &lt;p&gt;꾸준히 한국에서 리모트로 스터디를 진행했었고 스터디 &lt;a href=&quot;https://itunes.apple.com/app/id1123429371&quot;&gt;결과물&lt;/a&gt;도 나왔었다. 스위프트 스터디를 초창기 1.0이 발표되었을 때부터 3 까지 꾸준히 진행해왔다. 이젠 다른 언어보다 스위프트가 더 익숙한듯하다. 그리고 시간이 나면 틈틈이 오픈소스에 기여해보려고 노력했었다. 데일리코딩까진 아니지만 뭔가 배운 것을 매일 Github에 커밋하는 것도 해봤지만 내 체질은 아닌듯하다. 1달 정도 하고 중단되었다. 짧은 코드를 풀 리퀘스트 하는 시도는 몇 번 해봤었다. 영어가 조금씩 늘어가니까 영어로 작성하는 것도 조금씩 편해지고 더욱 도전하기 어렵지 않았었다.&lt;/p&gt;
 
 &lt;p&gt;내년엔 조금 더 오픈소스에 이바지를 해보려 한다. 커밋메세지나 이슈등록들도 읽어보고 어떤 식으로 단어를 사용하는지 문법들 같은 것을 인식해가며 읽어보는 것도 프로그래밍에 관련해서 뿐만 아니라 영어에 상당한 도움이 된다는 것을 느꼈다.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;영어&lt;/h2&gt;
+&lt;h2 id=&quot;영어&quot;&gt;영어&lt;/h2&gt;
 
 &lt;p&gt;호주생활에서 영어는 필수이다. 영어를 안 하게 될 수 없는 상황들이 많으므로 조금씩 늘 수밖에 없다. 물론, 노력은 해야 한다. 계속 사람들을 만나거나 밖에서 활동을 많이 해야 하는데 나는 야외활동을 잘하는 타입이 아니어서 일부러 많이 친구들을 만났다. 같은 집에 살던 영국 친구들과도 이야기를 하고 영어도 물어보고 그들의 표현을 따라 하기도 하면서 연습을 했었다. 제일 어려웠던 건 일상대화인데 익숙하지 않은 분야나 다른 문화를 가지고 있는 사람들과 일상대화를 한다는 게 굉장히 어려웠다. 여기는 축구(푸티), 크로켓, 테니스, F1, 이런 경기들이 굉장히 인기가 높은데 한국에서 이런 것은 비인기 종목이라 접해보지 못했기 때문에, 일부러 경기에 가서 보기도 하고 위키를 찾아보며 룰을 공부했었다.&lt;/p&gt;
 
 &lt;p&gt;나중에 학원도 다닌 적이 있는데 어느 정도 영어가 좀 익숙해진다는 느낌이 들었을 때 학원을 가니까 또 한 번 느는 느낌이 들고. 이런 식으로 조금씩 조금씩 느는 것 같다. 이젠 좀 더 장문의 영어 글을 많이 읽는 습관들을 길러야겠다. 책도 읽고 뉴스도 많이 읽는 습관이 영어 실력에 엄청나게 도움이 된다.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;기대되는 2017년&lt;/h2&gt;
+&lt;h2 id=&quot;기대되는-2017년&quot;&gt;기대되는 2017년&lt;/h2&gt;
 
 &lt;p&gt;2016년은 부족한 것도 많고 아쉬운 것도 많았지만 호주생활에 이제 겨우 한 걸음 나아갔다고 생각된다. 아직 계약직이긴 하지만 회사도 다니고 있고 시티에 살던 집도 조금 외곽으로 옮겨갔고 좀 더 좋은 환경에서 살고 싶다는 목표를 조금씩 실천하고 있다. 내년은 운동도 조금 더 관심을 두고 건강과 생활에 좀더 신경쓰기를 목표로 하고싶다. 디자인패턴 공부와 사진찍기도 그리고 글쓰기를 꾸준히 해갈 계획이다.&lt;/p&gt;
 
 &lt;p&gt;항상 주변에서 신경 써주시며 견딜 수 있게 조언과 힘을 주신 분들이 있어 올해를 잘 끝낼 수 있었다고 생각한다. 좀 더 기대되는 2017년을 준비하며 2016년을 마친다.&lt;/p&gt;
 </description>
         <pubDate>Wed, 28 Dec 2016 20:41:00 +1100</pubDate>
-        <link>/2016-12-28-adios-2016/</link>
-        <guid isPermaLink="true">/2016-12-28-adios-2016/</guid>
+        <link>http://localhost:4000/2016-12-28-adios-2016/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-12-28-adios-2016/</guid>
         
         
         <category>note</category>
@@ -83,8 +139,8 @@
 
 </description>
         <pubDate>Mon, 21 Nov 2016 20:41:00 +1100</pubDate>
-        <link>/2016-11-21-kakadu/</link>
-        <guid isPermaLink="true">/2016-11-21-kakadu/</guid>
+        <link>http://localhost:4000/2016-11-21-kakadu/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-11-21-kakadu/</guid>
         
         
         <category>ios</category>
@@ -138,8 +194,8 @@
 &lt;/ol&gt;
 </description>
         <pubDate>Sun, 13 Nov 2016 23:38:00 +1100</pubDate>
-        <link>/2016-11-13-naming-for-class/</link>
-        <guid isPermaLink="true">/2016-11-13-naming-for-class/</guid>
+        <link>http://localhost:4000/2016-11-13-naming-for-class/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-11-13-naming-for-class/</guid>
         
         
         <category>development</category>
@@ -148,7 +204,7 @@
     
       <item>
         <title>Xamarin 으로 크로스플랫폼 개발</title>
-        <description>&lt;h4 id=&quot;section&quot;&gt;&lt;em&gt;이상한모임에서 발표했던 자료로 정리된 포스팅을 올립니다.&lt;/em&gt;&lt;/h4&gt;
+        <description>&lt;h4 id=&quot;이상한모임에서-발표했던-자료로-정리된-포스팅을-올립니다&quot;&gt;&lt;em&gt;이상한모임에서 발표했던 자료로 정리된 포스팅을 올립니다.&lt;/em&gt;&lt;/h4&gt;
 
 &lt;p&gt;Xamarin 은 2011년 부터 창립된 모노 프로젝트를 기반으로 한 모바일 크로스 플랫폼 개발 플랫폼이다. 웹뷰를 기반으로 하는 크로스 플랫폼 개발과는 다르게 C#으로 작성한 코드를 모노 프레임워크를 통해 네이티브 코드로 변환을 해서 빌드를 한다. React Native와 같은 방식인데 아직 정식버전이 나오지 않았지만 Xamarin은 정식으로 나온지 꽤 오래되었고 지금까지 관련된 툴과 서비스들이 출시되었다.&lt;/p&gt;
 
@@ -174,8 +230,8 @@
 &lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 20 Jun 2016 22:38:00 +1000</pubDate>
-        <link>/2016-06-20-crossplatform-development-with-xamarin/</link>
-        <guid isPermaLink="true">/2016-06-20-crossplatform-development-with-xamarin/</guid>
+        <link>http://localhost:4000/2016-06-20-crossplatform-development-with-xamarin/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-06-20-crossplatform-development-with-xamarin/</guid>
         
         
         <category>mobile,</category>
@@ -246,8 +302,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 15 Apr 2016 22:38:00 +1000</pubDate>
-        <link>/2016-04-15-installation-jekyll-with-github/</link>
-        <guid isPermaLink="true">/2016-04-15-installation-jekyll-with-github/</guid>
+        <link>http://localhost:4000/2016-04-15-installation-jekyll-with-github/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-04-15-installation-jekyll-with-github/</guid>
         
         
         <category>jekyll</category>
@@ -308,8 +364,8 @@
 
 </description>
         <pubDate>Sat, 20 Feb 2016 23:38:00 +1100</pubDate>
-        <link>/2016-02-20-the-first-weird-meetup-in-mel/</link>
-        <guid isPermaLink="true">/2016-02-20-the-first-weird-meetup-in-mel/</guid>
+        <link>http://localhost:4000/2016-02-20-the-first-weird-meetup-in-mel/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-02-20-the-first-weird-meetup-in-mel/</guid>
         
         
         <category>weirdmeetup</category>
@@ -333,8 +389,8 @@
 &lt;p&gt;그 이후는 Pull 버튼을 눌러서 받아올 저장소를 지정해서 최신버전의 소스를 가져올 수 있다.&lt;/p&gt;
 </description>
         <pubDate>Sat, 20 Feb 2016 09:38:00 +1100</pubDate>
-        <link>/2016-02-20-add-upstream-at-fork-repository/</link>
-        <guid isPermaLink="true">/2016-02-20-add-upstream-at-fork-repository/</guid>
+        <link>http://localhost:4000/2016-02-20-add-upstream-at-fork-repository/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016-02-20-add-upstream-at-fork-repository/</guid>
         
         
         <category>git,</category>
@@ -347,7 +403,7 @@
     
       <item>
         <title>Wylse 개발 이야기</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/wylse-icon.png&quot; alt=&quot;wylse-icon&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/wylse-icon.png&quot; alt=&quot;wylse-icon&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;올해 3월말에 시작된 프로젝트가 이번에 릴리즈 되었다. &lt;a href=&quot;https://appsto.re/us/ODrN-.i&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
 
@@ -355,7 +411,7 @@
 
 &lt;p&gt;대단하진 않지만 개발기를 적어본다.&lt;/p&gt;
 
-&lt;h4 id=&quot;section&quot;&gt;&lt;strong&gt;시작은 즉흥적으로&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;시작은-즉흥적으로&quot;&gt;&lt;strong&gt;시작은 즉흥적으로&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;카페에서 여느때와 다름없이 모여서 각자 할일을 하는 &lt;a href=&quot;http://blog.weirdx.io/about/&quot;&gt;#이상한모임&lt;/a&gt; 을 하고 있었는데 한 개발자께서 토이프로젝트를 하나 해보는것이 어떠냐는 제안에 흥미를 가지고 하게되었고 그때 당시 스터디 중이기도 했었던 애플이 발표한 Swift 언어로 개발해보자는 생각으로 프로젝트를 시작했다.&lt;/p&gt;
 
@@ -381,20 +437,20 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h4 id=&quot;section-1&quot;&gt;&lt;strong&gt;디자인&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;디자인&quot;&gt;&lt;strong&gt;디자인&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;이프로젝트를 하면서 처음으로 Sketch를 사용해서 리소스를 만들어 봤는데 포토샵이나 일러스트의 기능들을 편하게 담은 느낌이 든다. path를 사용해서 벡터 이미지를 그리거나, path들을 합치고, 이펙트를 주는 것들도 정말 간편하게 만들었다.&lt;/p&gt;
 
 &lt;p&gt;그리고 이미지를 export하는 방법은 감동 수준이었다. 디자이너들이 Sketch를 사용하고 있지 않다면 꼭 추천해야할 정도의 앱이라고 생각한다.&lt;/p&gt;
 
-&lt;h4 id=&quot;section-2&quot;&gt;&lt;strong&gt;마무리&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;마무리&quot;&gt;&lt;strong&gt;마무리&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;p&gt;꾸준히 완성에 대한 목적을 가지고 잊을만 할때면 누군가가 이야기를 꺼내서 이어갈 수 있었다. 한번 이렇게 완성을 하고 릴리즈까지 하니 다음 앱은 좀더 멋지고 재미있는걸 만들수 있지 않을까 하는 자신감이 생겼다.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 09 Dec 2015 11:00:00 +1100</pubDate>
-        <link>/2015-12-09-story-of-wylse/</link>
-        <guid isPermaLink="true">/2015-12-09-story-of-wylse/</guid>
+        <link>http://localhost:4000/2015-12-09-story-of-wylse/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015-12-09-story-of-wylse/</guid>
         
         
         <category>wylse,</category>
@@ -405,70 +461,21 @@
     
       <item>
         <title>호주생활 한달 차</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;근황&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;근황&quot;&gt;근황&lt;/h1&gt;
 
 &lt;p&gt;이제 한달 정도 호주생활을 하고 있는데 아직도 일을 구하는 중이다. 한달정도 일을 지원하고 영어공부하고 하는 일만 하다보니 여러생각이 든다. 가끔 마음이 힘든 날이 있는데 또 괜찮은 날도 있다. 중간에 돈이 부족해서 잠깐 알바로 다른일을 한적도 있고, 현지에 있는 외국인들과 함께할 수 있는 모임도 자주 간다.&lt;/p&gt;
 
-&lt;h1 id=&quot;section-1&quot;&gt;영어&lt;/h1&gt;
+&lt;h1 id=&quot;영어&quot;&gt;영어&lt;/h1&gt;
 
 &lt;p&gt;영어는 꾸준히 하고 있지만 아직 만족하지는 못한다. 못알아 듣는것도 아직 많으니까. 하지만 내 주변사람들이 말하기로는 만날때 보단 훨씬 많이 늘었다고 한다. 그래도 원활한 커뮤니케이션을 위해서 계속 연습해야한다. 영어 뿐만 아니라 어떤 언어든 꾸준함 밖에는 답이 없다고 하니. 나름 스스로 재미를 붙이는 방법으로 버티면서 하고 있다.&lt;/p&gt;
 
-&lt;h1 id=&quot;it&quot;&gt;취업 (IT)&lt;/h1&gt;
+&lt;h1 id=&quot;취업-it&quot;&gt;취업 (IT)&lt;/h1&gt;
 
 &lt;p&gt;한달정도 된 지금, 인터뷰를 보면 웬만한 이야기는 나눈다. 대부분 물어보는게 비슷하기 때문이기도 하고 단어도 익숙하니까, 그리고 취업활동을 하면서 답장이 안온다고 실망하거나 좌절을 여러번 껶게되었었는데, 정말 느리게.. 아주 느리게 연락을 주는 회사가 많다. 정말 급하게 사람을 구하지 않는이상 사람을 뽑을땐 좀 느리게 답장이 오니 나도 지금은 좀 여유를 가지고 지원하고 있다.&lt;/p&gt;
 </description>
         <pubDate>Tue, 20 Oct 2015 11:00:00 +1100</pubDate>
-        <link>/2015-10-20-australia-04/</link>
-        <guid isPermaLink="true">/2015-10-20-australia-04/</guid>
-        
-        
-        <category>australia,</category>
-        
-        <category>workholiday,</category>
-        
-        <category>워킹홀리데이,</category>
-        
-        <category>호주</category>
-        
-      </item>
-    
-      <item>
-        <title>호주생활 10일차</title>
-        <description>&lt;p&gt;호주에 도착한 지 벌써 10일이 지났다. 짧은 시간안에 호주에 정착을 해야한다는 생각 떄문인지 많은것이 바뀌었다. 집도 구했고, 끼니를 때우기 위해 장을 보고, 영어공부도 정말정말 열심히 하고, 아직은 일을 구하진 못했지만 계속 시도중이다. 짧지만 10일 동안 느낀점들을 정리해본다.&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;집&lt;/h1&gt;
-
-&lt;p&gt;호주에는 쉐어라는 것이 있는데 한집에서 모르는 사람들 끼리 함께 사는것이다. 쉐어하우스가 값도 저렴하고 수요와 공급이 많다. 난 운이 좋게 사람이 적게 사는 쉐어룸을 구했고 그래서 쾌적하게 집을 사용하고 있다. 한주에 150불 정도 되는 가격으로 구할 수 있는데 나는 시티안에서 살고 있어서 이정도 지만 시티에서 멀어질 수록 조금 값도 저렴하고 큰 집을 구할수 있다.&lt;/p&gt;
-
-&lt;p&gt;집을 구하고 보니 정착한 느낌이 들어 이제야 마음이 한결 놓인다. 집은 최대한 빨리 구하는것이 제일 좋은것 같다.&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;식사&lt;/h1&gt;
-
-&lt;p&gt;여기에서 사먹는 것도 괜찮지만. 그래도 직접 사서 요리해 먹는것 만큼 저렴하진 않다. 한끼에 10불 정도는 생각해야하는데 이게 모이면 상당하기 때문에 현재 목적이 우선 돈을 저축하는 것이니 만큼 최대한 생활비에서 비용을 아껴야 하기 때문에 왠만하면 요리를 해서 먹는 쪽으로 한다. (여기서 사는 사람들도 가능하다면 만들어 먹는걸 선호한다.) 한끼한끼 뭘 해먹을지 생각하고 고민하고 요리하는게 정말 쉽지 않다. 부모님에게 정말 감사하게 생각하게 되었다.&lt;/p&gt;
-
-&lt;h1 id=&quot;section-2&quot;&gt;여행&lt;/h1&gt;
-
-&lt;p&gt;시간이 날때 틈틈히 여행을 다녀라, 라는 이야기를 굉장히 많이 들었다. 실제로 일을 시작하면 일하는것에 시간을 쓰기 때문에 놀러가기 어려울것이라는 말을 많이 들었다. 멜번의 곳곳에는 볼거리와 즐길거리가 많다. 아무데나 찍어도 이쁜사진을 얻을 수 있을 정도로 좋다. 그래도 관광명소로 있는곳에 가면 정말정말 이쁜풍경을 볼수있었다. 거리도 멀지 않고 교통도 잘되어 있어서 가기 좋으니 꼭 틈틈히 가면 좋을것 같다.&lt;/p&gt;
-
-&lt;h1 id=&quot;section-3&quot;&gt;영어&lt;/h1&gt;
-
-&lt;p&gt;영어권의 나라다 보니 모든것이 영어에 기초하고 있다. 당연한 것이기도 하지만 그만큼 나도 당연히 영어를 해야한다. 물론 한국인이 운영하는 마트, 식당으로 가면 영어를 쓰지 않아도 된다. 근데 한국어를 쓸것이면 여기에 온 의미가 사라지기 때문에 최대한 한국인과 접촉을 피하려고 했다. 이건 나를 위해서 그런것 이기 때문에 어쩔수 없었다. 이렇게 라도 영어를 위해서 외국인과 대화를 하는것이 더 낫다는게 내 생각이다. 호주 사람들은 대부분 친절해서 물어보면 잘 알려준다. 하지만 물어보는것도 답변을 듣는것도 모두 영어이기 때문에 영어에 대한 노력이 계속 있어야 한다.&lt;/p&gt;
-
-&lt;p&gt;지금 내가 겪는 문제중 가장 큰것이 영어이기도 하다. 특히 내 직업군 (소프트웨어 개발) 에선 더더욱 영어의 필요가 높다. 얼마나 필요하냐면… 커뮤니케이션만 되면 된다고 한다. (상당히 애매한 기준이긴해도 커뮤니케이션이 가능하다와 불가능하다는 차이는 분명히 있다고 생각한다..)&lt;/p&gt;
-
-&lt;h1 id=&quot;it&quot;&gt;취업 (IT)&lt;/h1&gt;
-
-&lt;p&gt;경력을 좀 가지고 있다면 CV와 커버레터를 잘 만들어서 IT회사에 내면 연락이 상당히 많이온다. 지금까지 10개 정도의 회사에서 연락이 왔었는데 어떤곳은 직접 회사로 초대해서 인터뷰를 보거나, 전화로 간단하게 인터뷰를 보고 또 어떤곳은 갑자기 이메일로 요구사항을 보내서 테스트한다. 근데 여기서 중요한것은 영어라는 것이다. 모든게 영어로 이루어지고 있는데 사실 단어는 직업적으로 많이 쓰이는것들이라 알아듣는 부분에는 크게 문제되지 않는데 기본회화에서 많이 힘들었다.&lt;/p&gt;
-
-&lt;p&gt;그런부분을 답답하게 여기기도 하고 아니면 최대한 편의를 봐주면서 하려고 하기도 하고 회사마다 조금씩 다르다. 여기서 가장 중요한건 커뮤니케이션이 가능한가 이다. 예를 들어 점심을 뭐먹을지 이야기를 하는데 그것조차 못알아듣고 이야기를 못한다면 정말 어려울 것이다. 조금 복잡한 대화라도 물어가면서 할수 있으면 원활하지 않을까 생각된다.&lt;/p&gt;
-
-&lt;p&gt;그리고 거의 모든부분에서 먼저 HR과 전화로 통화를 하고 그다음 기술팀과 대화를 하는 식으로 하는데 전화영어가 조금 어렵다. 잘 들리지 않아서 애먹은적이 대부분이다.. 전화영어도 굉장히 중요하다.&lt;/p&gt;
-
-&lt;p&gt;결국 취업에서도 영어가 가장 중요하다는게 내생각이다. 실력도 실력이지만 영어를 대신하긴 어려웠다 정도.. 엄청 실력이 뛰어나거나, 운이 좋지 않으면 어려운 부분이라고 생각된다.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 22 Sep 2015 10:00:00 +1000</pubDate>
-        <link>/2015-09-22-australia-03/</link>
-        <guid isPermaLink="true">/2015-09-22-australia-03/</guid>
+        <link>http://localhost:4000/2015-10-20-australia-04/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015-10-20-australia-04/</guid>
         
         
         <category>australia,</category>

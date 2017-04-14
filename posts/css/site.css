@@ -120,8 +120,14 @@ ul, menu, dir {
   margin-bottom: 10px;
 }
 
+.about-body {
+  color: #555;
+}
+
 .get-in-touch {
-  list-style: none;
+  li {
+    padding-left: 10px;
+  }
 }
 
 
