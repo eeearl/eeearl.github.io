@@ -25,7 +25,7 @@ View가 Observer 이고 Subscript 를 바인딩하는게 처음엔 어색했지�
 
 RxSwift 에 대해 아직 공부해야 할 것들이 많이 남아있지만 쉬운것부터 프로젝트에 적용하면서 익히는것이 좋을 것 같다는 생각이 들어서 시작하게 되었다. 프로젝트는 혼자 하고 있는 것이라 쉽게 적용해볼 수 있었다. Rx 브랜치를 새로 만들어서 그곳에서만 따로 Rx 로 구현된 코드를 관리했다. 
 
-UI 에 코드를 작성하면서 반복작업을 하다보니 (Snippet)[https://github.com/ul7290/RxSwiftSnippets] 을 작성하였다. UI에 관련된 작은 코드들 이지만 생각보다 rx 코딩하는게 짧진 않아서 항상 헷갈리는 코드를 빠르게 작성 할 수 있다.
+UI 에 코드를 작성하면서 반복작업을 하다보니 [Snippet](https://github.com/ul7290/RxSwiftSnippets) 을 작성하였다. UI에 관련된 작은 코드들 이지만 생각보다 rx 코딩하는게 짧진 않아서 항상 헷갈리는 코드를 빠르게 작성 할 수 있다.
 
 
 [RxSwiftSnippets Github Link](https://github.com/ul7290/RxSwiftSnippets)
