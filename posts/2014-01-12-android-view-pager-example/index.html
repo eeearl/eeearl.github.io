@@ -23,7 +23,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">blog.eeearl.com</a>
+    <a class="site-title" href="/">Blog</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -41,7 +41,7 @@
           <!--  -->
         <!--  -->
           <!--  -->
-          <!-- <a class="page-link" href="/about/">About</a> -->
+        <!--  -->
           <!--  -->
         <!--  -->
           <!--  -->
@@ -67,8 +67,8 @@
           <!--  -->
         <!--  -->
         <a class="page-link" href="/about/">Abouts</a>
-        <a class="page-link" href="/works/">Works</a>
-        <!-- <a class="page-link" href="/tags">Tags</a> -->
+        <!-- <a class="page-link" href="/works/">Works</a> -->
+        <a class="page-link" href="/archives">Archives</a>
       </div>
     </nav>
 
@@ -79,6 +79,9 @@
 </header>
 
 
+    <div id="root"></div>
+    <script type="text/javascript" src="/assets/javascripts/bundle.js" charset="utf-8"></script>
+    
     <div class="page-content">
       <div class="wrapper">
         <div class="post">
@@ -105,11 +108,11 @@
   <li>
     <p>support library에 있는 View를 사용할 때는 android.support.v4.view.ViewPager 로 패키지 이름을 전부 적어야 합니다.</p>
 
-    <relativelayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".MainActivity">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".MainActivity">
 
-      <android.support.v4.view.viewpager android:id="@+id/pager" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+      <android.support.v4.view.ViewPager android:id="@+id/pager" android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
-  </relativelayout>
+  </RelativeLayout>
   </li>
 </ul>
 
@@ -286,8 +289,9 @@ FragmentStatePagerAdapter는 화면이 전환될 때 이전(화면에서 보이�
 
 
     <script defer src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    
     <!-- tag, category search -->
-    <script defer src="/js/alexpearce.js"></script>
+    <!-- <script defer src="/js/alexpearce.js"></script> -->
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

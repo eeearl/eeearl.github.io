@@ -2,7 +2,8 @@
 layout: post
 title:  "Digital Ocean에 Cloud Flare로 https 쉽게 설정하기"
 date:   2017-04-04 09:41:00
-categories: web, https, digitalocean
+categories: Web
+tags: https, digitalocean
 description: "Digital Ocean 서버에 https를 간단히 적용했던 방법을 이야기합니다."
 ---
 

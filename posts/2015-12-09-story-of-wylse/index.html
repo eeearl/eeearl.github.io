@@ -23,7 +23,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">blog.eeearl.com</a>
+    <a class="site-title" href="/">Blog</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -41,7 +41,7 @@
           <!--  -->
         <!--  -->
           <!--  -->
-          <!-- <a class="page-link" href="/about/">About</a> -->
+        <!--  -->
           <!--  -->
         <!--  -->
           <!--  -->
@@ -67,8 +67,8 @@
           <!--  -->
         <!--  -->
         <a class="page-link" href="/about/">Abouts</a>
-        <a class="page-link" href="/works/">Works</a>
-        <!-- <a class="page-link" href="/tags">Tags</a> -->
+        <!-- <a class="page-link" href="/works/">Works</a> -->
+        <a class="page-link" href="/archives">Archives</a>
       </div>
     </nav>
 
@@ -79,6 +79,9 @@
 </header>
 
 
+    <div id="root"></div>
+    <script type="text/javascript" src="/assets/javascripts/bundle.js" charset="utf-8"></script>
+    
     <div class="page-content">
       <div class="wrapper">
         <div class="post">
@@ -98,7 +101,7 @@
 
 <p>대단하진 않지만 개발기를 적어본다.</p>
 
-<h4 id="section"><strong>시작은 즉흥적으로</strong></h4>
+<h4 id="시작은-즉흥적으로"><strong>시작은 즉흥적으로</strong></h4>
 
 <p>카페에서 여느때와 다름없이 모여서 각자 할일을 하는 <a href="http://blog.weirdx.io/about/">#이상한모임</a> 을 하고 있었는데 한 개발자께서 토이프로젝트를 하나 해보는것이 어떠냐는 제안에 흥미를 가지고 하게되었고 그때 당시 스터디 중이기도 했었던 애플이 발표한 Swift 언어로 개발해보자는 생각으로 프로젝트를 시작했다.</p>
 
@@ -124,13 +127,13 @@
 </code></pre>
 </div>
 
-<h4 id="section-1"><strong>디자인</strong></h4>
+<h4 id="디자인"><strong>디자인</strong></h4>
 
 <p>이프로젝트를 하면서 처음으로 Sketch를 사용해서 리소스를 만들어 봤는데 포토샵이나 일러스트의 기능들을 편하게 담은 느낌이 든다. path를 사용해서 벡터 이미지를 그리거나, path들을 합치고, 이펙트를 주는 것들도 정말 간편하게 만들었다.</p>
 
 <p>그리고 이미지를 export하는 방법은 감동 수준이었다. 디자이너들이 Sketch를 사용하고 있지 않다면 꼭 추천해야할 정도의 앱이라고 생각한다.</p>
 
-<h4 id="section-2"><strong>마무리</strong></h4>
+<h4 id="마무리"><strong>마무리</strong></h4>
 
 <p>꾸준히 완성에 대한 목적을 가지고 잊을만 할때면 누군가가 이야기를 꺼내서 이어갈 수 있었다. 한번 이렇게 완성을 하고 릴리즈까지 하니 다음 앱은 좀더 멋지고 재미있는걸 만들수 있지 않을까 하는 자신감이 생겼다.</p>
 
@@ -223,8 +226,9 @@
 
 
     <script defer src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    
     <!-- tag, category search -->
-    <script defer src="/js/alexpearce.js"></script>
+    <!-- <script defer src="/js/alexpearce.js"></script> -->
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

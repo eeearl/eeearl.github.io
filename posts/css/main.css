@@ -103,6 +103,9 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .post-list { margin-left: 0; list-style: none; }
 .post-list > li { margin-bottom: 0; /*$spacing-unit;*/ }
 
+.archive-group { margin-left: 0; list-style: none; }
+.archive-group > li { margin-bottom: 0; /*$spacing-unit;*/ }
+
 .post-meta { font-size: 15.75px; color: #828282; float: right; font-size: 0.8em; }
 
 .post-link { /* display: block; font-size: 24px;

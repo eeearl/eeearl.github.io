@@ -183,6 +183,15 @@
     }
 }
 
+.archive-group {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: 0; /*$spacing-unit;*/
+    }
+}
+
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;

@@ -2,7 +2,7 @@
 layout: post
 title:  "[Javascript 책 요약] 4장 변수와 스코프, 메모리"
 date:   2014-04-05 00:06:43
-categories: javascript
+categories: Javascript
 ---
 ## 1. 원시 값과 참조 값
 

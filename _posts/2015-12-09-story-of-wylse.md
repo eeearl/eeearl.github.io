@@ -2,7 +2,7 @@
 layout: post
 title:  "Wylse 개발 이야기"
 date:   2015-12-09 00:00:00
-categories: wylse, 앱개발
+categories: Wylse
 ---
 
 ![wylse-icon]({{ site.url }}/assets/wylse-icon.png)

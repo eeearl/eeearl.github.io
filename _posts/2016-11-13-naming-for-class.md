@@ -2,7 +2,7 @@
 layout: post
 title:  "너무너무너무 고민되는 클래스이름 짓기"
 date:   2016-11-13 12:38:00
-categories: development
+categories: 개발관련
 ---
 
 개발자라면 누구나 개발중 고민되는 것으로 이름짓기지 않나 싶다 특히 **클래스이름짓기**

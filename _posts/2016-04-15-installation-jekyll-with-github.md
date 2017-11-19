@@ -2,7 +2,7 @@
 layout: post
 title:  "Jekyll 설치"
 date:   2016-04-15 12:38:00
-categories: jekyll
+categories: Jekyll
 ---
 
 지금 사용하고 있는 블로그의 엔진은 Jekyll을 사용하고 있는데 Github에서 제공하는 호스팅을 사용하고 있다. 블로그를 운영하기에 큰 제약사항이 없고 편하게 사용하기 좋아 사용하는데 로컬에서 블로그를 구동하려면 몇가지 요구조건을 맞춰서 설치를 해야한다.

@@ -2,7 +2,7 @@
 layout: post
 title:  "[iOS/WatchKit] WatchKit 개발 팁"
 date:   2015-07-23 00:00:00
-categories: ios9, ios, watchkit, apple, applewatch
+categories: iOS
 ---
 
 **여기 팁들과 최고의 실행 노하우들과 함께 WatchKit 앱 활용을 극대화 하세요.**

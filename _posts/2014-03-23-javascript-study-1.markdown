@@ -2,7 +2,7 @@
 layout: post
 title:  "[Javascript 책 요약] 1장 자바스크립트란 무엇인가"
 date:   2014-03-23 00:06:43
-categories: javascript
+categories: Javascript
 tags: javascript
 ---
 <blockquote>

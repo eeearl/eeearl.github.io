@@ -2,7 +2,8 @@
 layout: post
 title:  "Carthage 에서 Cocoapods 으로 모든 프레임웍을 이동했다."
 date:   2017-06-28 09:41:00
-categories: ios, xcode, carthage, cocoapods
+categories: iOS
+tags: xcode, carthage, cocoapods
 description: "처음엔 Carthage 로 프레임웍들을 가져왔는데 나중엔 Cocoapods 가게되었다."
 ---
 

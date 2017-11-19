@@ -2,7 +2,7 @@
 layout: post
 title:  "갤러리에서 Picasa나 Google+의 Sync된 이미지를 가져오는 방법"
 date:   2014-04-03 00:00:00
-categories: android
+categories: Android
 ---
 
 안드로이드에서 Intent를 사용해 갤러리나 사진앱을 통해 사진의 Uri를 가져오는 코드는 이렇습니다. 

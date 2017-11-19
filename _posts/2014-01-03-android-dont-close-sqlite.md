@@ -2,7 +2,7 @@
 layout: post
 title:  "Android에서 SQLite를 close 하지마라!?"
 date:   2014-01-03 00:00:00
-categories: android
+categories: Android
 ---
 
 안드로이드에서 내부에 데이터를 저장해야 할 경우 Sqlite를 편리하게 사용됩니다. 파일 형식이기 때문에 데이터를 입력하기 전엔 open을 하고 다 입력을 하면 close를 해서 사용하는 것이 일반적입니다.

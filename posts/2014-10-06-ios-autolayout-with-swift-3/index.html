@@ -23,7 +23,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">blog.eeearl.com</a>
+    <a class="site-title" href="/">Blog</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -41,7 +41,7 @@
           <!--  -->
         <!--  -->
           <!--  -->
-          <!-- <a class="page-link" href="/about/">About</a> -->
+        <!--  -->
           <!--  -->
         <!--  -->
           <!--  -->
@@ -67,8 +67,8 @@
           <!--  -->
         <!--  -->
         <a class="page-link" href="/about/">Abouts</a>
-        <a class="page-link" href="/works/">Works</a>
-        <!-- <a class="page-link" href="/tags">Tags</a> -->
+        <!-- <a class="page-link" href="/works/">Works</a> -->
+        <a class="page-link" href="/archives">Archives</a>
       </div>
     </nav>
 
@@ -79,6 +79,9 @@
 </header>
 
 
+    <div id="root"></div>
+    <script type="text/javascript" src="/assets/javascripts/bundle.js" charset="utf-8"></script>
+    
     <div class="page-content">
       <div class="wrapper">
         <div class="post">
@@ -90,11 +93,11 @@
   </header>
 
   <article class="post-content">
-    <h1 id="autolayout--swift--autolayout---3">코드로 Autolayout 적용하기 (Swift로 하는 autolayout) - 3</h1>
+    <h1 id="코드로-autolayout-적용하기-swift로-하는-autolayout---3">코드로 Autolayout 적용하기 (Swift로 하는 autolayout) - 3</h1>
 
 <p>Swift로 <a href="/ios-autolayout-with-swift-2">Autolayout 적용하기 (코드로 하는 autolayout) - 2</a> 에서는 다른 뷰의 위치와 관련되서 배치하는 방법으로 적용해 보았다. 이번에는 뷰에 관계되어 정렬하는 방법을 사용해서 적용해본다.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code>
 <span class="c1">// 파란뷰 생성</span>
 <span class="k">var</span> <span class="nv">blueView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
 <span class="n">blueView</span><span class="o">.</span><span class="nf">setTranslatesAutoresizingMaskIntoConstraints</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
@@ -254,8 +257,9 @@
 
 
     <script defer src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    
     <!-- tag, category search -->
-    <script defer src="/js/alexpearce.js"></script>
+    <!-- <script defer src="/js/alexpearce.js"></script> -->
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

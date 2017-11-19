@@ -2,7 +2,7 @@
 layout: post
 title:  "Android ViewPager 기본예제"
 date:   2014-01-12 00:00:00
-categories: android
+categories: Android
 ---
 
 안드로이드에서 굉장히 많이 쓰이는 AdapterView 입니다. 각각의 View에 다양한 레이아웃을 적용할 수 있어서 응용 또한 다양하게 할 수 있습니다. 이번 포스팅는 가장 기본적인 코드만 다뤄보겠습니다.

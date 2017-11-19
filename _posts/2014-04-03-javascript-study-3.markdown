@@ -2,7 +2,7 @@
 layout: post
 title:  "[Javascript 책 요약] 3장 언어의 기초"
 date:   2014-04-03 00:06:43
-categories: javascript
+categories: Javascript
 ---
 <blockquote>
 < 프론트엔드 개발자를 위한 자바스크립트>(2013 인사이트, 한선용 옮김) 의 책을 요약한 내용으로 자바스크립트 제대로 배우기 스터디 그룹(페이스북) 의 글입니다.

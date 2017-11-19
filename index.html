@@ -8,10 +8,15 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts %}
+    {% if post.categories contains 'android' %}
+        
+      {% else %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %y" }}</span> &nbsp; 
-	    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <div class="post-desc">{{ post.description }}</div>
       </li>
+      {% endif %}
     {% endfor %}
   </ul>
 

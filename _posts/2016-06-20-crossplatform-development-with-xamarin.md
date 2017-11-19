@@ -2,7 +2,7 @@
 layout: post
 title:  "Xamarin 으로 크로스플랫폼 개발"
 date:   2016-06-20 12:38:00
-categories: mobile, xamarin
+categories: Xamarin
 ---
 
 #### *이상한모임에서 발표했던 자료로 정리된 포스팅을 올립니다.*

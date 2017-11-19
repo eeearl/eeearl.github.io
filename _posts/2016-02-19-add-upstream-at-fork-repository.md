@@ -2,7 +2,7 @@
 layout: post
 title:  "[Git] SourceTree 에서 upstream 추가하기"
 date:   2016-02-19 22:38:00
-categories: git, sourcetree, tips
+categories: Git
 ---
 
 Github 이나 Bitbucket 같은 곳에서 오픈소스 프로젝트 혹은 컨트리뷰터로 참여하려면 내 계정으로 fork를 한 후에 `Pull request` 를 해서 원본 저장소에 머지 요청을 한다. 

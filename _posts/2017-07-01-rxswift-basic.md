@@ -2,7 +2,8 @@
 layout: post
 title:  "[RxSwift] RxSwift 를 프로젝트에 사용하게 된지 2주가 되었다."
 date:   2017-07-01 09:41:00
-categories: ios, xcode, rxswift
+categories: iOS
+tags: xcode, rxswift
 description: "RxSwift 를 프로젝트에 사용하고 느낀점"
 ---
 
