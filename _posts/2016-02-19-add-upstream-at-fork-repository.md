@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "[Git] SourceTree 에서 upstream 추가하기"
+date:   "2016-02-19T22:38:00"
+path: "/2016-02-19-add-upstream-at-fork-repository"
+categories: Git
+---
+
+Github 이나 Bitbucket 같은 곳에서 오픈소스 프로젝트 혹은 컨트리뷰터로 참여하려면 내 계정으로 fork를 한 후에 `Pull request` 를 해서 원본 저장소에 머지 요청을 한다. 
+
+근데 fork 받은 소스를 수정하거나 기능을 추가하는 도중 원본 저장소의 최신 버전으로 올라간다면 내가 fork 받은 소스도 최신으로 유지를 시키는 작업이 필요할 것이다.
+
+나는 주로 `SourceTree` 를 사용하는데 로컬로 클론시킨 저장소에서 원본소스의 최신버전으로 소스를 유지할 수 있게 하는 방법을 적어본다.
+
+  1. 메뉴의 Repository -> Repository Settings 을 선택한다.
+  2. Remotes 패널의 Add 버튼을 누른다.
+  3. 원본 저장소의 URL과 이름 (`upstream`) 을 지정한 후 저장한다.
+
+그 이후는 Pull 버튼을 눌러서 받아올 저장소를 지정해서 최신버전의 소스를 가져올 수 있다.
