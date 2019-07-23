@@ -8,7 +8,7 @@ import styled from '@emotion/styled'
 
 import { graphql } from "gatsby"
 
-import '../styles/layout'
+import Layout from '../styles/layout'
 
 export default ({
   data: {
@@ -25,7 +25,7 @@ export default ({
     )
 
   return (
-    <>
+    <Layout>
       <Heading />
       <div className="page-content">
         <div className="wrapper">
@@ -33,7 +33,7 @@ export default ({
         </div>
       </div>
       <Tailing />
-    </>
+    </Layout>
   )
 }
 

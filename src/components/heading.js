@@ -83,7 +83,7 @@ const heading = ({ blogTitle, blogPath, blogDesc, isBlogPost }) => {
               <Link css={[BlogNameStyle]} to={`/`}>eeearl</Link>
               <Menu>
                 <Link css={MenuItem} to={`/about`}>about</Link>
-                <Link css={MenuItem} to={`/blog`}>blog</Link>
+                {/* <Link css={MenuItem} to={`/blog`}>blog</Link> */}
               </Menu>
             </Wrapper>
           </>
