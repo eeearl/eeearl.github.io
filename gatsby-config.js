@@ -14,8 +14,6 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-emotion`, 
-    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -92,5 +90,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-emotion`, 
+    `gatsby-plugin-postcss`,
   ],
 }

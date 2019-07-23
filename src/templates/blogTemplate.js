@@ -21,7 +21,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   const { title, path, description } = frontmatter
   return (
-    <React.Fragment>
+    <>
       <Heading blogTitle={title} blogPath={path} blogDesc={description} isBlogPost/>
       <div className="post-content">
         <div className="wrapper">
@@ -34,7 +34,7 @@ export default function Template({
         </div>
       </div>
       <Tailing />
-    </React.Fragment>
+    </>
   )
 }
 
