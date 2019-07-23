@@ -1,4 +1,4 @@
-const config = require('./private-config')
+const config = require('./config')
 
 module.exports = {
   siteMetadata: {
