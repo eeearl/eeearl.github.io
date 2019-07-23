@@ -12,11 +12,6 @@ const IntroduceText = styled('p')`
 
 const Empty = styled('div')` margin: 24px 0; `
 
-const ListUp = styled('ul')`
-  list-style-type: none;
-  text-align: center;
-`
-
 export default () => {
   return (
     <>
