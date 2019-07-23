@@ -1,4 +1,4 @@
-const config = require('./config')
+const config = require('./private-config')
 
 module.exports = {
   siteMetadata: {
@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-63993792-1",
+        trackingId: config.ga,
         // Puts tracking script in the head instead of the body
         head: true,
         // Enables Google Optimize using your container Id
@@ -87,7 +87,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby RSS Feed",
+            title: "eeearl blog RSS Feed",
           },
         ],
       },

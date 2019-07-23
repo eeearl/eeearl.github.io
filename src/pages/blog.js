@@ -33,18 +33,16 @@ export default ({
   )
 }
   
-export const pageQuery = graphql`
+export const pagequery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 1000
+    ) {
       edges {
         node {
-          id
-          excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "YYYY.MM.DD")
             path
-            title
-            description
           }
         }
       }

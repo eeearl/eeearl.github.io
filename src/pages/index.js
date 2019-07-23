@@ -10,30 +10,49 @@ import { graphql } from "gatsby"
 
 import '../styles/layout'
 
-const WelcomeText = styled.p`
-  text-align: center;
-  display: block;
-`
-const IntroduceText = styled.div`
-  margin: 10px 0;
-  text-align: right;
-`
-export default () => {
+export default ({
+  data: {
+    allMarkdownRemark: { edges }
+  }
+}) => {
+
+  const Posts = edges
+    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .map(edge => 
+      <PostLink 
+        key={edge.node.id} 
+        post={edge.node} />
+    )
+
   return (
-    <React.Fragment>
+    <>
       <Heading />
       <div className="page-content">
         <div className="wrapper">
-          <IntroduceText>
-            <p>안녕하세요 </p>
-            <p>Good to see you </p>
-            <p>よろしくお願います </p>
-            {/* <p>Loves cat, cutting edge techs, and code</p>
-            <p>ありがとうございます、よろしくお願いします。</p> */}
-          </IntroduceText>
+          <div>{ Posts }</div>
         </div>
       </div>
       <Tailing />
-    </React.Fragment>
+    </>
   )
 }
+
+export const pagequery = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "YYYY.MM.DD")
+            path
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`

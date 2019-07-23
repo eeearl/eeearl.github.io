@@ -24,15 +24,9 @@ export default () => {
       <div className="page-content">
         <div className="wrapper">
           <IntroduceText>
-            <p>Pursues differentiated idea, a different perspective.</p>
-            <p>Keep in simplicity</p>
+            <p>Page Not Found.</p>
           </IntroduceText>
           <Empty></Empty>
-          <ListUp>
-            <li><a href='https://github.com/eeearl'>Github</a></li>
-            <li><a href='https://twitter.com/eeeearl'>Twitter</a></li>
-            <li><a href='https://www.linkedin.com/in/hanulpark'>LinkedIn</a></li>
-          </ListUp>
         </div>
       </div>
       <Tailing />
