@@ -10,9 +10,11 @@
     "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
+    "@babel/core": "^7.4.5",
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "@weknow/gatsby-remark-twitter": "^0.2.1",
+    "core-js": "^2.6.5",
     "emotion": "^10.0.14",
     "emotion-server": "^10.0.14",
     "gatsby": "^2.13.34",

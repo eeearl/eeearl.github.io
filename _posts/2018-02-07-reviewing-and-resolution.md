@@ -3,7 +3,7 @@ layout: post
 title:  "2017 회고"
 date:   "2018-02-07T09:41:00"
 path: "/2018-02-07-reviewing-and-resolution"
-categories: LifeStory
+categories: "private"
 tags:  
 description: "다사다난했던 2017년, 너무 빨리와버린 2018년"
 ---

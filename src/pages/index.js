@@ -40,7 +40,17 @@ export default ({
 export const pagequery = graphql`
   query {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }) {
+      filter: {
+        frontmatter: {
+          categories: {
+            ne: "private"
+          }
+        }
+      }
+      sort: { 
+        order: DESC, fields: [frontmatter___date] 
+      }) 
+      {
       edges {
         node {
           id
