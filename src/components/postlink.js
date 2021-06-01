@@ -1,15 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
-// import styled, { css } from 'react-emotion'
-import styled from '@emotion/styled'
-import { css } from 'emotion'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
-    height: '80px';
-    maxHeight: '80px';
+  position: relative;
+  height: 80px;
+  max-height: 80px;
+
+  transition: all 0.5s;
+  :hover {
+    opacity: 0.5;
+  }
 `
 
-const TitleStyle = css`
+const TitleStyle = styled(Link)`
   color: #d3d3d3;
   font-size: 0.88em;
   white-space: nowrap;
@@ -18,14 +22,17 @@ const TitleStyle = css`
   display: block;
 `
 
-const DateStyle = css`
+const DateStyle = styled.p`
   color: #C0C0C0;
   display: inline-block;
-  float: right;
   font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
 `
 
-const DescStyle = css`
+const DescStyle = styled.p`
   color: #585858;
   margin: 0 0 10px 14px;
   font-size: 0.78em;
@@ -37,12 +44,12 @@ const DescStyle = css`
 
 const PostLink = ({ post }) => (
   <Wrapper>
-    <Link to={post.frontmatter.path} className={TitleStyle}>
+    <TitleStyle to={post.frontmatter.path}>
       {post.frontmatter.title}
-    </Link>
+    </TitleStyle>
 
-    <p className={DateStyle}>{post.frontmatter.date}</p>
-    <p className={DescStyle}>{post.frontmatter.description}</p>
+    <DateStyle>{post.frontmatter.date}</DateStyle>
+    <DescStyle>{post.frontmatter.description}</DescStyle>
   </Wrapper>
 )
 

@@ -1,9 +1,5 @@
-// import { injectGlobal } from "react-emotion";
-// import styled from '@emotion/styled'
 import React from 'react'
-import { Global, css } from '@emotion/core'
-
-import "../styles/base";
+import styled, { createGlobalStyle } from 'styled-components'
 
 const baseFontSize = `18px`;
 const smallFontSize = `${baseFontSize * 0.875}`;
@@ -17,47 +13,47 @@ const greyColorDark = `darken(${greyColor}, 25%)`;
 // const onPalm = `600px`;
 const onLaptop = `800px`;
 
-export default ({ children }) => (
-  <>
-    <Global
-        styles={css`
-      /**
-      * Site header
-      */
-      .site-header {
-          // border-top: 5px solid ${greyColorDark};
-          //border-bottom: 1px solid ${greyColorLight};
-          min-height: 56px;
+export const siteHeader = styled.div`
+  // border-top: 5px solid ${greyColorDark};
+  //border-bottom: 1px solid ${greyColorLight};
+  min-height: 56px;
 
-          // Positioning context for the mobile navigation icon
-          position: relative;
-      }
+  // Positioning context for the mobile navigation icon
+  position: relative;
+`
 
-      .site-title {
-          font-size: 26px;
-          line-height: 56px;
-          letter-spacing: -1px;
-          margin-bottom: 0;
-          float: left;
+export const siteTitle = styled.div`
+    font-size: 26px;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
 
-          &,
-          &:visited {
-              color: ${greyColorDark};
-          }
-      }
+    &,
+    &:visited {
+        color: ${greyColorDark};
+    }
+`
+
+export const siteFooter = styled.div`
+      border-top: 1px solid ${greyColorLight};
+      padding: ${spacingUnit} 0;
+  `
+
+export const footerHeading = styled.div`
+  font-size: 18px;
+  margin-bottom: ${spacingUnit} / 2;
+`
+
+export default createGlobalStyle`
+      
 
       /**
       * Site footer
       */
-      .site-footer {
-          border-top: 1px solid ${greyColorLight};
-          padding: ${spacingUnit} 0;
-      }
+      
 
-      .footer-heading {
-          font-size: 18px;
-          margin-bottom: ${spacingUnit} / 2;
-      }
+      
 
       .contact-list,
       .social-media-list {
@@ -707,236 +703,7 @@ export default ({ children }) => (
           margin-bottom: 0!important;
         }
 
-        a:not([href]) {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        blockquote,
-        dl,
-        ol,
-        p,
-        pre,
-        table,
-        ul {
-          margin-bottom: 16px;
-          margin-top: 0;
-        }
-
-        hr {
-          background-color: #e1e4e8;
-          border: 0;
-          height: .25em;
-          margin: 24px 0;
-          padding: 0;
-        }
-
-        blockquote {
-          border-left: .25em solid #dfe2e5;
-          color: #6a737d;
-          padding: 0 1em;
-        }
-
-        blockquote>:first-child {
-          margin-top: 0;
-        }
-
-        blockquote>:last-child {
-          margin-bottom: 0;
-        }
-
-        kbd {
-          background-color: #fafbfc;
-          border: 1px solid #c6cbd1;
-          border-bottom-color: #959da5;
-          border-radius: 3px;
-          box-shadow: inset 0 -1px 0 #959da5;
-          color: #444d56;
-          display: inline-block;
-          font-size: 11px;
-          line-height: 10px;
-          padding: 3px 5px;
-          vertical-align: middle;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-          font-weight: 600;
-          line-height: 1.25;
-          margin-bottom: 16px;
-          margin-top: 24px;
-        }
-
-        h1 {
-          font-size: 2em;
-        }
-
-        h1, h2 {
-          border-bottom: 1px solid #eaecef;
-          padding-bottom: .3em;
-        }
-
-        h2 {
-          font-size: 1.5em;
-        }
-
-        h3 {
-          font-size: 1.25em;
-        }
-
-        h4 {
-          font-size: 1em;
-        }
-
-        h5 {
-          font-size: .875em;
-        }
-
-        h6 {
-          color: #6a737d;
-          font-size: .85em;
-        }
-
-        h1 {
-          padding-top: 20px;
-          font-size: 2em;
-          margin: .67em 0;
-        }
-        h2 {
-            font-size: 30px;
-
-            @include media-query(${onLaptop}) {
-                font-size: 28px;
-            }
-        }
-
-        h3 {
-            font-size: 26px;
-
-            @include media-query(${onLaptop}) {
-                font-size: 22px;
-            }
-        }
-
-        h4 {
-            font-size: 20px;
-
-            @include media-query(${onLaptop}) {
-                font-size: 18px;
-            }
-        }
-
-        hr {
-          border: none;
-          border-top: 1px solid ${greyColor};
-          margin-top: 30px;
-        }
-
-        p {
-          margin: 20px 0;
-        }
-
-        ol,
-        ul {
-          padding-left: 2em;
-        }
-
-        ol ol,
-        ol ul,
-        ul ol,
-        ul ul {
-          margin-bottom: 0;
-          margin-top: 0;
-        }
-
-        li {
-          word-wrap: break-all;
-        }
-
-        li>p {
-          margin-top: 16px;
-        }
-
-        li+li {
-          margin-top: .25em;
-        }
-
-        dl {
-          padding: 0;
-        }
-
-        dl dt {
-          font-size: 1em;
-          font-style: italic;
-          font-weight: 600;
-          margin-top: 16px;
-          padding: 0;
-        }
-
-        dl dd {
-          margin-bottom: 16px;
-          padding: 0 16px;
-        }
-
-        table {
-          display: block;
-          overflow: auto;
-          width: 100%;
-        }
-
-        table th {
-          font-weight: 600;
-        }
-
-        table td,
-        table th {
-          border: 1px solid #dfe2e5;
-          padding: 6px 13px;
-        }
-
-        table tr {
-          background-color: #fff;
-          border-top: 1px solid #c6cbd1;
-        }
-
-        table tr:nth-child(2n) {
-          background-color: #f6f8fa;
-        }
-
-        img {
-          background-color: #fff;
-          box-sizing: content-box;
-          max-width: 100%;
-        }
-
-        img[align=right] {
-          padding-left: 20px;
-        }
-
-        img[align=left] {
-          padding-right: 20px;
-        }
-
-        code {
-          background-color: rgba(27,31,35,.05);
-          border-radius: 3px;
-          font-size: 85%;
-          margin: 0;
-          padding: .2em .4em;
-        }
-
-        pre {
-          word-wrap: normal;
-        }
-
-        pre>code {
-          background: transparent;
-          border: 0;
-          font-size: 100%;
-          margin: 0;
-          padding: 0;
-          white-space: pre;
-          word-break: normal;
-        }
+        
 
         .highlight {
           margin-bottom: 16px;
@@ -1190,8 +957,4 @@ export default ({ children }) => (
 
       img[alt=drawing] { width: 200px; }
 
-    `}
-  />
-  { children }
-  </>
-)
+`

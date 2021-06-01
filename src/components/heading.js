@@ -1,9 +1,7 @@
 import React from "react"
 import PropTypes from 'prop-types'
 import { Link } from "gatsby"
-// import styled, { css } from "react-emotion"
-import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import styled from 'styled-components'
 import { StaticQuery, graphql } from "gatsby"
 
 import Helmet from 'react-helmet'
@@ -12,14 +10,14 @@ const Wrapper = styled.header`
   height: 120px;
 `
 
-const BlogNameStyle = css`
+const BlogNameStyle = styled(Link)`
   display: inline-block;
   color: #838383;
   font-size: 28px;
   margin-top: 8px;
 `
 
-const MenuItem = css`
+const MenuItem = styled(Link)`
   color: #E0E0E0;
   margin: 0 8px;
   
@@ -80,9 +78,9 @@ const heading = ({ blogTitle, blogPath, blogDesc, isBlogPost }) => {
               {/* <meta name="twitter:image" content={image} /> */}
             </Helmet>
             <Wrapper className='wrapper'>
-              <Link css={[BlogNameStyle]} to={`/`}>eeearl</Link>
+              <BlogNameStyle to={`/`}>eeearl</BlogNameStyle>
               <Menu>
-                <Link css={MenuItem} to={`/about`}>about</Link>
+                <MenuItem to={`/about`}>about</MenuItem>
                 {/* <Link css={MenuItem} to={`/blog`}>blog</Link> */}
               </Menu>
             </Wrapper>

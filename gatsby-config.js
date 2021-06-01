@@ -14,7 +14,6 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-emotion`, 
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -30,6 +29,7 @@ module.exports = {
         name: "markdown-pages",
       },
     },
+    'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

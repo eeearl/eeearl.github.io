@@ -1,36 +1,33 @@
 import React from "react"
-import styled from 'styled-components'
-
 import Heading from '../components/heading'
 import Tailing from '../components/tailing'
 import PostLink from '../components/postlink'
 
+import styled from 'styled-components'
+
 import { graphql } from "gatsby"
-import BaseStyle from '../styles/base'
-import Global from '../styles/layout'
 
-const size = {
-  mobile: '320px',
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
-  desktop: '2560px'
-}
+import Layout from '../styles/portfolioLayout'
+import MenuNav from '../components/portfolio/menuNav'
 
-const Container = styled.div`
-  width: ${size.tablet};
-  margin: 0 auto;
+const MenuSide = styled.div`
+  width: 50%;
+`
 
-  @media ${size.laptop} {
-    max-width: 800px;
+const Header = styled.div`
+  width: 220px;
+  bottom: 0;
+  top: 0;
+  text-align: right;
+  z-index: 9;
 
-  }
+  position: fixed;
+`
 
-  @media ${size.mobile} 
-    width: ${size.mobile};{
-    max-width: 100%;
-    padding: 0 20px;
-  }
+const ContentSide = styled.div`
+  width: 75%;
+
+  margin-left: 25%;
 `
 
 export default ({
@@ -48,17 +45,20 @@ export default ({
     )
 
   return (
-    <Container>
-      <BaseStyle />
-      <Global />
-      <Heading />
-      <div className="page-content">
-        <div className="wrapper">
-          <div>{ Posts }</div>
+    <Layout>
+      <div id="main-content">
+        <div className="container">
+          <div className="row">
+            <MenuSide>
+              <Header>
+                <MenuNav />
+              </Header>
+            </MenuSide>
+            <ContentSide>{ Posts }</ContentSide>
+          </div>
         </div>
       </div>
-      <Tailing />
-    </Container>
+    </Layout>
   )
 }
 
